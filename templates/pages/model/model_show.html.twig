@@ -1,0 +1,398 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'Modéles concus à partir de maquettes' }}{{- parent() -}}{% endblock %}
+  {% block body_main %}
+      <!-- Header Section Begin -->
+      <header class="header-section">
+      </header>
+      <!-- Header End -->
+      <!-- Model Details Hero Section Begin -->
+      <section class="pd-hero-section set-bg img-responsive" data-setbg="{{ asset('images/models/'~ model.filename) }}">
+          <div class="container">
+              {% for message in app.flashes('success') %}
+                  <div class="alert alert-success">
+                      {{ message }}
+                  </div>
+              {% endfor %}
+              {% if not form.vars.valid %}
+                  <div class="alert alert-danger">
+                      Erreur dans le formulaire
+                  </div>
+              {% endif %}
+              <div class="row">
+                  <div class="col-lg-8 offset-lg-2">
+                      <div class="pd-hero-text">
+                          <p class="room-location"><i class="icon_pin"></i>{{ model.name }}</p>
+                          <h2>{{ model.name }}</h2>
+                          <div class="room-price">
+                              <span>Start Form:</span>
+                              <p>${{ model.price }}</p>
+                          </div>
+                          <ul class="room-features">
+                              <li>
+                                  <i class="fa fa-arrows"></i>
+                                  <p>{{ model.description|raw }}</p>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- Model Details Hero Section Begin -->
+
+      <!-- Model Details Section Begin -->
+      <section class="model-details-section ">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-9">
+                      <div class="pd-details-text">
+                          <div class="pd-details-social">
+                              <a href="#"><i class="fa fa-facebook"></i></a>
+                              <a href="#"><i class="fa fa-send"></i></a>
+                              <a href="#"><i class="fa fa-star"></i></a>
+                              <a href="#"><i class="fa fa-print"></i></a>
+                              <a href="#"><i class="fa fa-cloud-download"></i></a>
+                          </div>
+                          <div class="model-more-pic">
+                              <div class="product-pic-zoom">
+                                  <img class="product-big-img img-responsive"
+                                       src="{{ asset('images/models/'~ model.filename) }}" alt="">
+                              </div>
+                              <div class="product-thumbs">
+                                  <div class="product-thumbs-track ps-slider owl-carousel">
+                                      <div class="pt" data-imgbigurl="{{ asset('images/models/'~ model.filename) }}">
+                                          <img src="{{ asset('images/models/'~ model.filename) }}" alt=""></div>
+                                      <div class="pt active" data-imgbigurl="{{ asset('img/estate01.jpg') }}">
+                                          <img src="{{ asset('img/estate01.jpg') }}" alt=""></div>
+                                      <div class="pt" data-imgbigurl="{{ asset('img/estate2.jpg') }}">
+                                          <img src="{{ asset('img/estate2.jpg') }}" alt=""></div>
+                                      <div class="pt" data-imgbigurl="{{ asset('img/estate3.jpg') }}">
+                                          <img src="{{ asset('img/estate3.jpg') }}" alt=""></div>
+                                      <div class="pt" data-imgbigurl="{{ asset('img/models-1.jpg') }}">
+                                          <img src="{{ asset('img/models-1.jpg') }}" alt=""></div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="pd-desc">
+                              <h4>Description</h4>
+                              <p>{{ model.description }}</p>
+                          </div>
+                          <div class="pd-details-tab">
+                              <div class="tab-item">
+                                  <ul class="nav nav-tabs" role="tablist">
+                                      <li class="nav-item">
+                                          <a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab">Overview</a>
+                                      </li>
+                                      <li class="nav-item">
+                                          <a class="nav-link" data-toggle="tab" href="#tab-2" role="tab">Description</a>
+                                      </li>
+                                      <li class="nav-item">
+                                          <a class="nav-link" data-toggle="tab" href="#tab-3" role="tab">Amenities</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="tab-item-content">
+                                  <div class="tab-content">
+                                      <div class="tab-pane fade-in active" id="tab-1" role="tabpanel">
+                                          <div class="model-more-table">
+                                              <table class="left-table">
+                                                  <tbody>
+                                                  <tr>
+                                                      <td class="pt-name">Price</td>
+                                                      <td class="p-value">{{ model.price }}$</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td class="pt-name">Property Type</td>
+                                                      <td class="p-value">Villa</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td class="pt-name">Year Built</td>
+                                                      <td class="p-value">2018</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td class="pt-name">Lot area</td>
+                                                      <td class="p-value">	200 spft</td>
+                                                  </tr>
+                                                  </tbody>
+                                              </table>
+                                              <table class="right-table">
+                                                  <tbody>
+                                                  <tr>
+                                                      <td class="pt-name">Agent</td>
+                                                      <td class="p-value">Adam Smith</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td class="pt-name">Reference</td>
+                                                      <td class="p-value">#2019</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td class="pt-name">Contract type</td>
+                                                      <td class="p-value">Sale</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td class="pt-name">Published </td>
+                                                      <td class="p-value">{{ model.createdAt | date }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td class="pt-name">Garages</td>
+                                                      <td class="p-value">2</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td class="pt-name">Home area</td>
+                                                      <td class="p-value">{{ model.name }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td class="pt-name">Gara Size</td>
+                                                      <td class="p-value">200 sqft</td>
+                                                  </tr>
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                      </div>
+                                      <div class="tab-pane fade" id="tab-2" role="tabpanel">
+                                          <div class="pd-table-desc">
+                                              <p>Entering the model you will be greeted by an impressive hallway
+                                                  offering plenty of space, the living room and dining room are
+                                                  extremely spacious and offer useful storage cupboards, it has been
+                                                  beautifully decorated with wooden floors and offers a lot of natural
+                                                  light.</p> <p>There are double French doors leading out on to the decking
+                                                  area overlooking the garden. The kitchen is also equally impressive
+                                                  and is fully integrated high standard
+                                                  with a front facing aspect.</p>
+                                              <p>
+                                                  Upstairs also offers the same high level of finish throughout with
+                                                  four bedrooms. On the first floor you'll find the master bedroom
+                                                  with en-suite and two further bedrooms.<br> On the second floor is the
+                                                  second bedroom with an en-suite and built-in wardrobe, it also has
+                                                  a large storage area.Externally the model has two allocated
+                                                  parking spaces, the garden is west facing allowing plenty of light
+                                                  into the model.. <br>Maidenhead
+                                                  will also soon benefit from the Cross Rail Development and is
+                                                  conveniently located close to junction 8/9 of the M4 via the
+                                                  A404(M) or A308(M), which provides access to the M25, Heathrow
+                                                  Airport and London.
+                                              </p>
+                                          </div>
+                                      </div>
+                                      <div class="tab-pane fade" id="tab-3" role="tabpanel">
+                                          <div class="pd-table-amenities">
+                                              <p>Our Sales Support Team work alongside agents in the field on every
+                                                  client search so that we are able to recommend hand-picked properties
+                                                  tailored to each client’s specific requirements.</p>
+                                              <p>All our agents live
+                                                  in the area in which they work, and their local knowledge and
+                                                  experience is invaluable.Once you choose which properties you want to
+                                                  view, we will organise a viewing itinerary for you and can help you
+                                                  to organise accommodation.We aim to make the whole process of your
+                                                  search for your dream home in France, as effective, smooth and
+                                                  enjoyable as possible.
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="model-map">
+                              <h4>Map</h4>
+                              <div class="map-inside">
+                                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2942.5524090066037!2d-71.10245469994108!3d42.47980730490846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3748250c43a43%3A0xe1b9879a5e9b6657!2sWinter%20Street%20Public%20Parking%20Lot!5e0!3m2!1sen!2sbd!4v1577299251173!5m2!1sen!2sbd" height="320" style="border:0;" allowfullscreen=""></iframe>
+                                  <div class="icon"><i class="fa fa-home"></i></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3">
+                      <div class="model-sidebar">
+                          <div class="best-agents">
+                              <h4>Best Agents</h4>
+                              <a href="#" class="ba-item">
+                                  <div class="ba-pic">
+                                      <img src="{{ asset('img/agent/best-agent-1.jpg') }}" alt="">
+                                  </div>
+                                  <div class="ba-text">
+                                      <h5>Lester Bradley</h5>
+                                      <span>Company Agents</span>
+                                      <p class="model-items">6 model </p>
+                                  </div>
+                              </a>
+                              <a href="#" class="ba-item">
+                                  <div class="ba-pic">
+                                      <img src="{{ asset('img/agent/best-agent-2.jpg') }}" alt="">
+                                  </div>
+                                  <div class="ba-text">
+                                      <h5>Janie Blair</h5>
+                                      <span>Company Agents</span>
+                                      <p class="model-items">6 model </p>
+                                  </div>
+                              </a>
+                              <a href="#" class="ba-item">
+                                  <div class="ba-pic">
+                                      <img src="{{ asset('img/agent/best-agent-3.jpg') }}" alt="">
+                                  </div>
+                                  <div class="ba-text">
+                                      <h5>Sophia Cole</h5>
+                                      <span>Marketing & Ceo</span>
+                                      <p class="model-items">6 model </p>
+                                  </div>
+                              </a>
+                          </div>
+                          <div class="sidebar-contact">
+                              <h4>More information</h4>
+                              <a href="#" class="primary-btn" id="contactButton" {% if form.vars.submitted %}
+                                  style="display: none;"{% endif %}>Contact us</a>
+                              <div id="contactForm" {% if not form.vars.submitted %} style="display: none;"{% endif %}>
+                                  {{ form_start(form) }}
+                                  <div class="row">
+                                      <div class="col">
+                                          {{ form_row(form.firstname) }}
+                                      </div>
+                                      <div class="col">
+                                          {{ form_row(form.lastname) }}
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col">
+                                          {{ form_row(form.phone) }}
+                                      </div>
+                                      <div class="col">
+                                          {{ form_row(form.email) }}
+                                      </div>
+                                  </div>
+                                  {{ form_rest(form) }}
+                                  <div class="form-group">
+                                      <button class="btn btn-secondary">Envoyer</button>
+                                  </div>
+                                  {{ form_end(form) }}
+                              </div>
+                          </div>
+                          <div class="agent-desc">
+                              <img src="{{ asset('img/agent/agent-contact.jpg') }}" alt="">
+                              <div class="agent-title">
+                                  <h5>Julia Smith</h5>
+                                  <span>Saler Marketing</span>
+                              </div>
+                              <div class="agent-social">
+                                  <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                  <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                  <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                  <a href="#"><i class="fa fa-envelope fa-lg"></i></a>
+                              </div>
+                              <p>Our friendly professional teams are always happy to help whether you contact us via
+                                  phone, email or drop by in person. Please get in touch using any of the details below.
+                              </p>
+                          </div>
+                          <hr class="rounded">
+                          <div class="agent-desc">
+                              <img src="{{ asset('img/estate01.jpg') }}" alt="">
+                              <div class="agent-title">
+                                  <h5>Last best-seller</h5>
+                                  <span>Charming house with outbuildings</span>
+                              </div>
+                              <div class="agent-social">
+                                  <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                  <a href="#"><i class="fa fa-envelope fa-lg"></i></a>
+                              </div>
+                              <p>In today’s net-savy world it has become common for any business.
+                                  We are a family business who offer a friendly and professional service. The team at
+                                  Head Office work closely with Leggett Agents across France to deliver an outstanding
+                                  service to our clients and vendors.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- Partner Carousel Section Begin -->
+      <div class="partner-section">
+          <div class="container">
+              <div class="partner-carousel owl-carousel">
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-1.png') }}" alt="">
+                      </div>
+                  </a>
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-2.png') }}" alt="">
+                      </div>
+                  </a>
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-3.png') }}" alt="">
+                      </div>
+                  </a>
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-4.png') }}" alt="">
+                      </div>
+                  </a>
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-5.png') }}" alt="">
+                      </div>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <!-- Footer Section Begin -->
+      <footer class="footer-section set-bg" data-setbg="{{ asset('img/footer-bg.jpg') }}">
+          <div class="container">
+              <div class="footer-text">
+                  <div class="row">
+                      <div class="col-lg-3">
+                          <div class="footer-logo">
+                              <p>Subscribe our newsletter gor get notification about new updates.</p>
+                              <form action="#" class="newslatter-form">
+                                  <input type="text" placeholder="Enter your email...">
+                                  <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 offset-lg-1">
+                          <div class="footer-widget">
+                              <h4>Property City</h4>
+                              <ul>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">Florida</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">New York</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">Washington</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">Los Angeles</a></li>
+                              </ul>
+                              <ul>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">St Louis</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">Jacksonville</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">San Jose</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">San Diego</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-lg-2">
+                          <div class="footer-widget">
+                              <h4>Social</h4>
+                              <ul class="social">
+                                  <li><i class="ti-facebook"></i> <a href="#">Facebook</a></li>
+                                  <li><i class="ti-instagram"></i> <a href="#">Instagram</a></li>
+                                  <li><i class="ti-twitter-alt"></i> <a href="#">Twitter</a></li>
+                                  <li><i class="ti-google"></i> <a href="#">Google+</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-lg-3">
+                          <div class="footer-widget">
+                              <h4>Contact Us</h4>
+                              <ul class="contact-option">
+                                  <li><i class="fa fa-map-marker"></i> 16 Creek Ave. Farming, NY</li>
+                                  <li><i class="fa fa-phone"></i> (+88) 666 121 4321</li>
+                                  <li><i class="fa fa-envelope"></i> info.agency@web-immo.com</li>
+                                  <li><i class="fa fa-clock-o"></i> Mon - Sat, 08 AM - 06 PM</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="copyright-text">
+                  <p><p>Copyright &copy;2019 All rights reserved <i class="ti-heart" aria-hidden="true"></i><a href="#" target="_blank">Modelypse</a></p>
+              </div>
+          </div>
+      </footer>
+  {% endblock %}

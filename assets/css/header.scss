@@ -1,0 +1,162 @@
+/*---------------------
+  Header
+-----------------------*/
+
+.canvas-open {
+  display: none;
+}
+
+.offcanvas-menu-wrapper {
+  display: none;
+}
+
+.header-section.header-normal .nav-logo {
+  z-index: 9;
+  -webkit-box-shadow: 0 0 15px 5px rgba(44, 44, 44, 0.2);
+  box-shadow: 0 0 15px 5px rgba(44, 44, 44, 0.2);
+}
+
+.top-nav {
+  background: transparent;
+}
+
+.top-nav .main-menu ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 45px;
+}
+
+.top-nav .main-menu ul li:last-child {
+  margin-right: 0;
+}
+
+.top-nav .main-menu ul li.active a {
+  color: #2c3131;
+}
+
+.top-nav .main-menu ul li a {
+  text-decoration: none;
+  font-size: 28px;
+  color: #424545;
+  letter-spacing: 1px;
+  font-family: "braxlinenarrow", sans-serif;
+  display: inline-block;
+  padding: 20px 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.top-nav .main-menu ul li a:hover {
+  color: #2cbdb8;
+}
+
+.top-nav .top-right {
+  text-align: right;
+}
+
+.top-nav .top-right .language-option {
+  display: inline-block;
+  margin-right: 25px;
+  position: relative;
+  cursor: pointer;
+  padding: 18px 0 19px;
+}
+
+.top-nav .top-right .language-option img {
+  margin-right: 2px;
+}
+
+.top-nav .top-right .language-option span {
+  color: #393434;
+  display: inline-block;
+  margin-right: 2px;
+  font-family: "braxlinenarrow", sans-serif;
+  font-size: 20px;
+  padding-left: 0.5em;
+}
+
+.top-nav .top-right .language-option i {
+  color: #4c4949;
+  font-size: 13px;
+}
+
+.top-nav .top-right .language-option:hover .flag-dropdown {
+  top: 50px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.top-nav .top-right .language-option .flag-dropdown {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  background: #ffffff;
+  min-width: 130px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 99;
+  border: 1px solid #ffffff;
+}
+
+.top-nav .top-right .language-option .flag-dropdown ul li {
+  list-style: none;
+}
+
+.top-nav .top-right .language-option .flag-dropdown ul li a {
+  font-family: "braxlinenarrow", sans-serif;
+  font-size: 20px;
+  color: #5c5959;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  text-align: left;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.top-nav .top-right .language-option .flag-dropdown ul li a:hover {
+  color: #2cbdb8;
+}
+
+.nav-logo .logo {
+  font-family: "amsterdam1", Helvetica, Arial, sans-serif;
+  padding-left: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  letter-spacing: 2px;
+  font-size: 50px;
+  color: #4c4e4e;
+  opacity: 0.9;
+}
+
+.nav-logo .nav-logo-right ul li {
+  list-style: none;
+  margin-left: 10em;
+  padding-top: 6em;
+  text-align: right;
+}
+
+.nav-logo .nav-logo-right ul li .info-text span {
+  font-family: "AdleryProBlockletter", Helvetica, Arial, sans-serif;
+  padding-top: 1em;
+  font-style: italic;
+  font-size: 32px;
+  color: #111111;
+}
+
+.nav-logo .nav-logo-right ul li .info-text p {
+  color: #19191a;
+  margin-bottom: 0;
+  line-height: 18px;
+  margin-top: 4px;
+}
+
+.nav-logo .nav-logo-right ul li .info-text p span {
+  color: #707079;
+  font-size: 16px;
+}

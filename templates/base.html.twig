@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+{%- apply spaceless -%}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Modelypse Création de modeles réduits, maquettes personnalisées, impressions 3d, sur le theme apocalypse à Dieppe en Normandie 76"/>
+    <meta name="author" content="Modelypse, réalisation de modéles réduits personnalisés, thème apocalypse"/>
+    <meta name="keywords" content="Modelypse, maquettes post-apocalyptiques, model réduits personnalisés">
+    <link rel="icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/elegant-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}" type="text/css">
+    <title>{%- block title -%}{{- ' Création de modèles réduits post-apocalypse' -}}{%- endblock -%}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('mainstyle') }}
+    {% endblock %}
+</head>
+{#- BODY ---------------------------------------------------------------------------------------------------   -#}
+<body id="top">
+    {% include 'navbar.html.twig' %}
+    <main>
+        {%- block body_main -%}{%- endblock -%}
+    </main>
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+{#- SCRIPT ---------------------------------------------------------------------------------------------   -#}
+{% block javascripts %}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('reveal') }}
+{% endblock %}
+</body>
 </html>
+{%- endapply -%}

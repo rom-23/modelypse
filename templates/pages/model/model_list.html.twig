@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'Modéles concus à partir de maquettes' }}{{- parent() -}}{% endblock %}
+  {% block body_main %}
+      <!-- Hero Section Begin -->
+      <section class="hero-section">
+          <div class="single-hero-item-properties set-bg" data-setbg="{{ asset('img/panorama.jpg') }}">
+          </div>
+      </section>
+      <div class="container properties-grid">
+          <div class="row">
+              {% for model in models %}
+                  <div class="col-md-4 pt-5">
+                      {% include('pages/model/_model.html.twig') %}
+                  </div>
+              {% endfor %}
+          </div>
+          <div class="pagination">
+              {{ knp_pagination_render(models) }}
+          </div>
+      </div>
+      <!-- Partner Carousel Section Begin -->
+      <div class="partner-section">
+          <div class="container">
+              <div class="partner-carousel owl-carousel">
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-1.png') }}" alt="">
+                      </div>
+                  </a>
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-2.png') }}" alt="">
+                      </div>
+                  </a>
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-3.png') }}" alt="">
+                      </div>
+                  </a>
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-4.png') }}" alt="">
+                      </div>
+                  </a>
+                  <a href="#" class="partner-logo">
+                      <div class="partner-logo-tablecell">
+                          <img src="{{ asset('img/partner/partner-5.png') }}" alt="">
+                      </div>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <!-- Footer Section Begin -->
+      <footer class="footer-section set-bg" data-setbg="{{ asset('img/footer-bg.jpg') }}">
+          <div class="container">
+              <div class="footer-text">
+                  <div class="row">
+                      <div class="col-lg-3">
+                          <div class="footer-logo">
+                              <p>Subscribe our newsletter gor get notification about new updates.</p>
+                              <form action="#" class="newslatter-form">
+                                  <input type="text" placeholder="Enter your email...">
+                                  <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 offset-lg-1">
+                          <div class="footer-widget">
+                              <h4>Property City</h4>
+                              <ul>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">Florida</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">New York</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">Washington</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">Los Angeles</a></li>
+                              </ul>
+                              <ul>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">St Louis</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">Jacksonville</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">San Jose</a></li>
+                                  <li><i class="fa fa-caret-right"></i> <a href="#">San Diego</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-lg-2">
+                          <div class="footer-widget">
+                              <h4>Social</h4>
+                              <ul class="social">
+                                  <li><i class="ti-facebook"></i> <a href="#">Facebook</a></li>
+                                  <li><i class="ti-instagram"></i> <a href="#">Instagram</a></li>
+                                  <li><i class="ti-twitter-alt"></i> <a href="#">Twitter</a></li>
+                                  <li><i class="ti-google"></i> <a href="#">Google+</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-lg-3">
+                          <div class="footer-widget">
+                              <h4>Contact Us</h4>
+                              <ul class="contact-option">
+                                  <li><i class="fa fa-map-marker"></i> 16 Creek Ave. Farming, NY</li>
+                                  <li><i class="fa fa-phone"></i> (+88) 666 121 4321</li>
+                                  <li><i class="fa fa-envelope"></i> info.agency@web-immo.com</li>
+                                  <li><i class="fa fa-clock-o"></i> Mon - Sat, 08 AM - 06 PM</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="copyright-text">
+                  <p><p>Copyright &copy; 2019 - All rights reserved | by <a href="#" target="_blank">Modelypse</a></p>
+              </div>
+          </div>
+      </footer>
+  {% endblock %}

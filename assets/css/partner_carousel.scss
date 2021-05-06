@@ -1,0 +1,50 @@
+.contact-partner .partner-carousel {
+  border-top: none;
+}
+
+.partner-carousel {
+  padding: 27px 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.partner-carousel.owl-carousel .owl-item img {
+  width: auto;
+}
+
+.partner-carousel .partner-logo {
+  min-height: 80px;
+  display: table;
+}
+
+.partner-carousel .partner-logo img {
+  opacity: 0.6;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.partner-carousel .partner-logo:hover img {
+  opacity: 1;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.carousel-item img {
+  max-height: 900px;
+}
+
+.partner-carousel .partner-logo .partner-logo-tablecell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+.carousel-control-prev-icon {
+  background: black;
+}
+
+.carousel-control-next-icon {
+  background: black;
+}

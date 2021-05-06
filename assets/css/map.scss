@@ -1,0 +1,70 @@
+.map {
+  height: 500px;
+  position: relative;
+}
+
+.map iframe {
+  width: 100%;
+}
+
+.map .icon-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.map .icon-list .icon {
+  font-size: 18px;
+  color: #ffffff;
+  width: 34px;
+  height: 34px;
+  background: #2cbdb8;
+  text-align: center;
+  line-height: 34px;
+  display: inline-block;
+  border-radius: 50%;
+  z-index: 1;
+  position: relative;
+}
+
+.map .icon-list .icon.icon-2 {
+  position: absolute;
+  left: 185px;
+  top: 145px;
+}
+
+.map .icon-list .icon.icon-1 {
+  position: absolute;
+  left: 425px;
+  top: 225px;
+}
+
+.map .icon-list .icon.icon-3 {
+  position: absolute;
+  left: 670px;
+  top: 145px;
+}
+
+.map .icon-list .icon.icon-4 {
+  position: absolute;
+  left: 550px;
+  top: 355px;
+}
+
+.map .icon-list .icon.icon-5 {
+  position: absolute;
+  left: 900px;
+  top: 335px;
+}
+
+.map .icon-list .icon:after {
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 40px;
+  height: 40px;
+  background: rgba(44, 189, 184, 0.4);
+  content: "";
+  z-index: -1;
+  border-radius: 50%;
+}
